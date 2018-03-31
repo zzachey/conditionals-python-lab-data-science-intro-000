@@ -3,11 +3,11 @@
 
 ### Introduction
 
-In our earlier lab on working with functional arguments, we found ways to work with food in Yelp.  In this lesson, we'll add new methods with our new knowledge of conditionals.
+In our earlier lab on working with functional arguments, we found ways to work with food in Yelp.  In this lesson, we'll add more complex methods now that we know about conditionals.
 
 ### Again, our two restuarants in Albuquerque
 
-Let's take another look at our data for a single restaurant.  Once again, we have Fork and Fig, as our sample of the data Yelp will provide on a restaurant.
+Let's take another look at our data for a single restaurant.  Once again, we have data regarding the Fork and Fig restaurant.
 
 
 ```python
@@ -37,7 +37,7 @@ fork_fig = {'categories': [{'alias': 'burgers', 'title': 'Burgers'},
  'url': 'https://www.yelp.com/biz/fork-and-fig-albuquerque?adjust_creative=SYc8R4Gowqru5h4SBKZXsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=SYc8R4Gowqru5h4SBKZXsQ'}
 ```
 
-And here is Frontier.
+And here is the data representing Frontier Restaurant.
 
 
 ```python
@@ -67,7 +67,7 @@ frontier_restaurant = {'categories': [{'alias': 'mexican', 'title': 'Mexican'},
  'url': 'https://www.yelp.com/biz/frontier-restaurant-albuquerque-2?adjust_creative=SYc8R4Gowqru5h4SBKZXsQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=SYc8R4Gowqru5h4SBKZXsQ'}
 ```
 
-And once again, here are the keys of the dictionaries above.
+And once again, the attributes of the dictionaries above look like the following.
 
 
 ```python
@@ -83,15 +83,12 @@ fork_fig.keys()
 
 ### Writing functions with conditionals
 
-Now let's write a function called `better_restaurant` that provided two restaurants, resturns the restaurant with the better rating.  The first argument is `restaurant` and the second argument is `alternative`.  
+Let's write a function called `better_restaurant` that provided two restaurants, returns the restaurant with the better rating.  The first argument is `restaurant` and the second argument is `alternative`.  
 
 
 ```python
 def better_restaurant(restaurant, alternative):
-    if restaurant['rating'] > alternative['rating']:
-        return restaurant
-    else:
-        return alternative
+    pass
 ```
 
 
@@ -100,22 +97,12 @@ better_restaurant(frontier_restaurant, fork_fig)['name'] # 'Fork & Fig'
 better_restaurant(fork_fig, frontier_restaurant)['name'] # 'Fork & Fig'
 ```
 
-
-
-
-    'Fork & Fig'
-
-
-
-Now let's write a function called `cheaper_restaurant` that returns the restaurant that has a higher price, that is the restaurant that has more `'$'` signs, than the alternative restaurant.  The first argument is `restaurant` and the second argument is `alternative`.
+Let's write a function called `cheaper_restaurant` that returns the restaurant with the higher price, that is the restaurant that has more `'$'` signs.  The first argument is `restaurant` and the second argument is `alternative`.
 
 
 ```python
 def cheaper_restaurant(restaurant, alternative):
-    if len(restaurant['price']) < len(alternative['price']):
-        return restaurant
-    else:
-        return alternative
+    pass
 ```
 
 
@@ -156,11 +143,7 @@ restaurants = [fork_fig, frontier_restaurant]
 
 ```python
 def open_restaurants(restaurants):
-    selected = []
-    for restaurant in restaurants:
-        if not restaurant['is_closed']:
-            selected.append(restaurant)
-    return selected
+    pass
 ```
 
 
