@@ -1,19 +1,14 @@
 import unittest2 as unittest
 from ipynb.fs.full.index import *
 
-class TestPythonLoops(unittest.TestCase):
-    def test_city_indices_list(self):
-        self.assertEqual(city_indices, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
+class TestFunctionsConditions(unittest.TestCase):
+    def test_better_restaurant_func(self):
+        self.assertEqual(better_restaurant(frontier_restaurant, fork_fig), fork_fig)
+        self.assertEqual(better_restaurant(fork_fig, frontier_restaurant), fork_fig)
 
-    def test_names_and_ranks_list(self):
-        self.assertEqual(names_and_ranks[0], '1. Solta')
-        self.assertEqual(names_and_ranks[-1], '12. Pyeongchang')
+    def test_cheaper_restaurant_func(self):
+        self.assertEqual(cheaper_restaurant(frontier_restaurant, fork_fig), frontier_restaurant)
+        self.assertEqual(cheaper_restaurant(fork_fig, frontier_restaurant), frontier_restaurant)
 
-    def test_city_indices_list(self):
-        self.assertEqual(city_indices, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
-
-    def test_city_populations(self):
-        self.assertEqual(city_populations, [1700, 84554, 13591863, 287651, 32237, 928850, 559277, 60000, 0, 4000, 630, 2581000])
-
-    def test_city_populations(self):
-        self.assertEqual(city_areas, [59, 68, 4758, 3750, 33, 200, 491, 8300, 672, 27, 2731571, 3194])
+    def test_open_restaurants_func(self):
+        self.assertItemsEqual(open_restaurants([fork_fig, frontier_restaurant]), [fork_fig])
