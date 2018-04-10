@@ -88,7 +88,9 @@ Let's write a function called `better_restaurant` that provided two restaurants,
 
 ```python
 def better_restaurant(restaurant, alternative):
-    pass
+    if restaurant['rating'] > alternative['rating']:
+        return restaurant
+    return alternative
 ```
 
 
@@ -97,12 +99,20 @@ print(better_restaurant(frontier_restaurant, fork_fig)['name']) # 'Fork & Fig'
 print(better_restaurant(fork_fig, frontier_restaurant)['name']) # 'Fork & Fig'
 ```
 
+    Fork & Fig
+    Fork & Fig
+
+
 Let's write a function called `cheaper_restaurant` that returns the restaurant with the lower price, that is the restaurant that has fewer `'$'` signs.  The first argument should be named `restaurant` and the second argument should be named `alternative`.
 
 
 ```python
 def cheaper_restaurant(restaurant, alternative):
-    pass
+    if len(restaurant['price']) < len(alternative['price']):
+        return restaurant
+    if len(restaurant['price']) > len(alternative['price']):
+        return alternative
+    return "Restaurants are the same price!"
 ```
 
 
@@ -110,6 +120,10 @@ def cheaper_restaurant(restaurant, alternative):
 print(cheaper_restaurant(fork_fig, frontier_restaurant)['name']) # 'Frontier Restaurant'
 print(cheaper_restaurant(frontier_restaurant, fork_fig)['name']) # 'Frontier Restaurant'
 ```
+
+    Frontier Restaurant
+    Frontier Restaurant
+
 
 ### Conditionals and Loops
 
@@ -121,9 +135,23 @@ fork_fig['is_closed'] # False
 ```
 
 
+
+
+    False
+
+
+
+
 ```python
 frontier_restaurant['is_closed'] # True
 ```
+
+
+
+
+    True
+
+
 
 
 ```python
@@ -133,7 +161,11 @@ restaurants = [fork_fig, frontier_restaurant]
 
 ```python
 def open_restaurants(restaurants):
-    pass
+    open = []
+    for restaurant in restaurants:
+        if not restaurant['is_closed']:
+            open.append(restaurant)
+    return open
 ```
 
 
@@ -142,9 +174,23 @@ len(open_restaurants(restaurants)) # 1
 ```
 
 
+
+
+    1
+
+
+
+
 ```python
 open_restaurants(restaurants)[0]['name'] # 'Fork & Fig'
 ```
+
+
+
+
+    'Fork & Fig'
+
+
 
 ### Summary
 
