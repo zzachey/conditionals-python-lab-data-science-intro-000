@@ -3,7 +3,7 @@
 
 ### Introduction
 
-In our earlier lab on working with functional arguments, we found ways to work with food in Yelp.  In this lesson, we'll add more complex methods now that we know about conditionals.
+In our earlier lab on functional arguments, we found ways to work with Yelp to find and compare restaurants. In this lesson, we'll add more complex methods now that we know about conditionals.
 
 ### Again, our two restuarants in Albuquerque
 
@@ -93,11 +93,11 @@ def better_restaurant(restaurant, alternative):
 
 
 ```python
-better_restaurant(frontier_restaurant, fork_fig)['name'] # 'Fork & Fig'
-better_restaurant(fork_fig, frontier_restaurant)['name'] # 'Fork & Fig'
+print(better_restaurant(frontier_restaurant, fork_fig)['name']) # 'Fork & Fig'
+print(better_restaurant(fork_fig, frontier_restaurant)['name']) # 'Fork & Fig'
 ```
 
-Let's write a function called `cheaper_restaurant` that returns the restaurant with the higher price, that is the restaurant that has more `'$'` signs.  The first argument is `restaurant` and the second argument is `alternative`.
+Let's write a function called `cheaper_restaurant` that returns the restaurant with the lower price, that is the restaurant that has fewer `'$'` signs.  The first argument should be named `restaurant` and the second argument should be named `alternative`.
 
 
 ```python
@@ -107,33 +107,23 @@ def cheaper_restaurant(restaurant, alternative):
 
 
 ```python
-cheaper_restaurant(fork_fig, frontier_restaurant)['name'] # 'Frontier Restaurant'
-cheaper_restaurant(frontier_restaurant, fork_fig)['name'] # 'Frontier Restaurant'
+print(cheaper_restaurant(fork_fig, frontier_restaurant)['name']) # 'Frontier Restaurant'
+print(cheaper_restaurant(frontier_restaurant, fork_fig)['name']) # 'Frontier Restaurant'
 ```
-
-
-
-
-    'Frontier Restaurant'
-
-
 
 ### Conditionals and Loops
 
-Let's continue our work of conditionals by seeing how they can be combined with loops.  So write a function called `open_restaurants` that takes as an argument a list of restaurants and returns only a list of only the restaurants that are not closed.  
+Let's continue our work of conditionals by seeing how they can be combined with loops. Let's write a function called `open_restaurants` that takes in a list of restaurants as an argument and returns a list of only the restaurants that are not closed.
 
 
 ```python
 fork_fig['is_closed'] # False
-frontier_restaurant['is_closed'] # True
 ```
 
 
-
-
-    True
-
-
+```python
+frontier_restaurant['is_closed'] # True
+```
 
 
 ```python
@@ -149,16 +139,13 @@ def open_restaurants(restaurants):
 
 ```python
 len(open_restaurants(restaurants)) # 1
-open_restaurants(restaurants)[0]['name'] # 'Fork & Fig'
 ```
 
 
-
-
-    'Fork & Fig'
-
-
+```python
+open_restaurants(restaurants)[0]['name'] # 'Fork & Fig'
+```
 
 ### Summary
 
-Great!  Through this lab we saw how to pass arguments to functions, multiple arguments to functions, and how to implement functinons with default arguments.
+Great! In this lab we saw how to use functions with multiple arguments and conditionals to return the restaurant we want based on the questions we are trying to answer. We also saw how to use conditionals to select only certain elements of an array based on a condition we want our elements to meet.
