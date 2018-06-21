@@ -5,7 +5,7 @@
 
 In our earlier lab on functional arguments, we found ways to work with Yelp to find and compare restaurants. In this lesson, we'll add more complex methods now that we know about conditionals.
 
-### Again, our two restuarants in Albuquerque
+### Again, our two restaurants in Albuquerque
 
 Let's take another look at our data for a single restaurant.  Once again, we have data regarding the Fork and Fig restaurant.
 
